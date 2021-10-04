@@ -84,6 +84,8 @@ void draw() {
   PVector mousePos = new PVector(mouseX, mouseY);
   isBothered = position.dist(mousePos) < triggerDistance1; 
   
+    
+  
   if (mousePressed) {
             botheredMarkTime = millis(); 
     ghostCurrent = ghost02; // interaction expression
@@ -92,13 +94,13 @@ void draw() {
       pickTarget();
  souls = souls + 1;
  
-  
+
  }
  
   } else if (!isBothered && millis() > botheredMarkTime + botheredTimeout/6) {
     ghostCurrent = ghost01; // neutral expression
   }
-  
+
 
  position.y += sin(millis()) / 0.5; // weird y shake
 
@@ -109,25 +111,21 @@ image(mid,mx,0); image(mid,mx2,0);
 image(front,fx,0); image(front,fx2,0);
 image(bushes,nx,0); image(bushes,nx2,0);
 image(faxman, target.x, target.y, 100, 100); 
+image(ghostCurrent, position.x , position.y); // change to mouseX and mouseY if you want cursor
+
 // Text
 textSize(30);
 fill(149, 0, 0);
 text("Souls: " + souls, 50, 550);
    
-  if (souls < 6) {
-image(ghost04, -1000, -1000);
-image(ghostCurrent, position.x , position.y); // change to mouseX and mouseY if you want cursor
-} else {
-image(ghost04, position.x, position.y);
-image(ghostCurrent, -1000 , -1000); // change to mouseX and mouseY if you want cursor
-}
+
    
    
-   if (souls < 15) {
+   if (souls < 10) {
 } else {
  fill(255, 255, 255);
   textSize(20);
-  text("boo " + boo, random(800), random(600));
+  text("boo " + boo, position.x, position.y);
   System.out.println("boo.");
 
 
