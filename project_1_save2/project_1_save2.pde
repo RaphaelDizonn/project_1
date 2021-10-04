@@ -85,8 +85,10 @@ void draw() {
   PVector mousePos = new PVector(mouseX, mouseY);
   isBothered = position.dist(mousePos) < triggerDistance1; 
   
-    
-  
+    if (isBothered) {
+            botheredMarkTime = millis(); 
+    ghostCurrent = ghost04; // interaction expression;
+    }
   if (mousePressed) {
             botheredMarkTime = millis(); 
     ghostCurrent = ghost02; // interaction expression
@@ -95,12 +97,13 @@ void draw() {
       pickTarget();
  souls = souls + 1;
 // size = size + 50; 
- 
- 
+
+      
+
 
 
     
-
+  
 
  }
  
@@ -118,6 +121,7 @@ image(mid,mx,0); image(mid,mx2,0);
 image(front,fx,0); image(front,fx2,0);
 image(bushes,nx,0); image(bushes,nx2,0);
 image(faxman, target.x, target.y, 100, 100); 
+image(ghost04, position.x , position.y, ghostCurrent.width, ghostCurrent.width + size);
 
 image(ghostCurrent, position.x , position.y, ghostCurrent.width, ghostCurrent.width + size);
 
