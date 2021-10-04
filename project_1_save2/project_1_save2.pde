@@ -7,6 +7,7 @@ PVector position, target;
 PImage ghostCurrent, ghost01, faxman, ghost02, ghost03, ghost04; 
 float margin = 50;
 
+float size = 0;
 float x;
 float velocity = 5;
 int souls = 0;
@@ -93,7 +94,13 @@ void draw() {
     if (position.dist(target) < triggerDistance2) {
       pickTarget();
  souls = souls + 1;
+// size = size + 50; 
  
+ 
+
+
+    
+
 
  }
  
@@ -111,7 +118,10 @@ image(mid,mx,0); image(mid,mx2,0);
 image(front,fx,0); image(front,fx2,0);
 image(bushes,nx,0); image(bushes,nx2,0);
 image(faxman, target.x, target.y, 100, 100); 
-image(ghostCurrent, position.x , position.y); // change to mouseX and mouseY if you want cursor
+
+image(ghostCurrent, position.x , position.y, ghostCurrent.width, ghostCurrent.width + size);
+
+
 
 // Text
 textSize(30);
