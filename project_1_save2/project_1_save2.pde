@@ -1,6 +1,7 @@
 // Raphael Dizon #218038464
 // Project 1: Bedsheet Monster 
  
+// Cute game starring the Bedsheet Monster. Click and hold to collect the souls. Every 5 souls increases the size of the Bedsheet Monster. Touch the Bedsheet Monster to make him smile. 
  
 boolean debug = false;
 PVector position, target;
@@ -98,18 +99,12 @@ void draw() {
  souls = souls + 1;
 // size = size + 50; 
 
-      
-
-
-
-    
-  
-
  }
  
   } else if (!isBothered && millis() > botheredMarkTime + botheredTimeout/6) {
     ghostCurrent = ghost01; // neutral expression
   }
+
 
 
  position.y += sin(millis()) / 0.5; // weird y shake
@@ -121,10 +116,7 @@ image(mid,mx,0); image(mid,mx2,0);
 image(front,fx,0); image(front,fx2,0);
 image(bushes,nx,0); image(bushes,nx2,0);
 image(faxman, target.x, target.y, 100, 100); 
-image(ghost04, position.x , position.y, ghostCurrent.width, ghostCurrent.width + size);
-
-image(ghostCurrent, position.x , position.y, ghostCurrent.width, ghostCurrent.width + size);
-
+image(ghostCurrent, position.x , position.y, ghostCurrent.width + size, ghostCurrent.width + size);
 
 
 // Text
@@ -132,16 +124,34 @@ textSize(30);
 fill(149, 0, 0);
 text("Souls: " + souls, 50, 550);
    
+  if (4 < souls) {
+  size = 0 + 20;
+}
+
+   if (9 < souls) {
+  size = 0 + 40;
+}
+   
+    if (14 < souls) {
+  size = 0 + 60;
+}
+   if (19 < souls) {
+  size = 0 + 80;
+}
+   
+    if (24 < souls) {
+  size = 0 + 100;
+}
+  
 
    
    
-   if (souls < 10) {
+   if (souls < 29) {
 } else {
  fill(255, 255, 255);
-  textSize(20);
-  text("boo " + boo, position.x, position.y);
+  textSize(50);
+  text("boo " + boo, random(800), random(600));
   System.out.println("boo.");
-
 
 }
 
