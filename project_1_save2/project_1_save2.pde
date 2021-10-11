@@ -2,6 +2,7 @@
 // Project 1: Bedsheet Monster 
  
 // Cute game starring the Bedsheet Monster. Click and hold to collect the souls. Every soul increases the size of the Bedsheet Monster. Touch the Bedsheet Monster to make him smile. 
+ // This project uses the sound library
  
 boolean debug = false;
 PVector position, target;
@@ -125,8 +126,7 @@ fill(149, 0, 0);
 text("Souls: " + souls, 50, 550);
    
  
-  
-
+ 
    
    
    if (souls < 29) {
