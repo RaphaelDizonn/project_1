@@ -1,7 +1,7 @@
 // Raphael Dizon #218038464
 // Project 1: Bedsheet Monster 
  
-// Cute game starring the Bedsheet Monster. Click and hold to collect the souls. Every 5 souls increases the size of the Bedsheet Monster. Touch the Bedsheet Monster to make him smile. 
+// Cute game starring the Bedsheet Monster. Click and hold to collect the souls. Every soul increases the size of the Bedsheet Monster. Touch the Bedsheet Monster to make him smile. 
  
 boolean debug = false;
 PVector position, target;
@@ -97,7 +97,7 @@ void draw() {
     if (position.dist(target) < triggerDistance2) {
       pickTarget();
  souls = souls + 1;
-// size = size + 50; 
+size = size + 5; 
 
  }
  
@@ -124,24 +124,7 @@ textSize(30);
 fill(149, 0, 0);
 text("Souls: " + souls, 50, 550);
    
-  if (4 < souls) {
-  size = 0 + 20;
-}
-
-   if (9 < souls) {
-  size = 0 + 40;
-}
-   
-    if (14 < souls) {
-  size = 0 + 60;
-}
-   if (19 < souls) {
-  size = 0 + 80;
-}
-   
-    if (24 < souls) {
-  size = 0 + 100;
-}
+ 
   
 
    
