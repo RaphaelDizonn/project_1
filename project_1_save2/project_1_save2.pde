@@ -1,7 +1,7 @@
 // Raphael Dizon #218038464
 // Project 1: Bedsheet Monster 
  
-// Cute game starring the Bedsheet Monster. Click and hold to collect the souls. Every soul increases the size of the Bedsheet Monster. Touch the Bedsheet Monster to make him smile. 
+// Heart collecting game starring the Bedsheet Monster. Click and hold to collect the hearts. Every heart increases the size of the Bedsheet Monster. Touch the Bedsheet Monster to make him smile. 
  // This project uses the sound library
  
 boolean debug = false;
@@ -39,12 +39,17 @@ int lx = 0, lx2 = 600;
 PImage bushes;
 int nx = 0, nx2 = 600;
 
-import processing.sound.*;
-SoundFile song;
+// REMOVE SLASHES TO ENABLE MUSIC
+// import processing.sound.*;
+// SoundFile song;
 
 void setup() { 
-  size(800, 600, P2D);
+ // REMOVE SLASHES TO ENABLE MUSIC
+  // song = new SoundFile(this, "ghostduet.wav"); 
+// song.loop();
   
+  size(800, 600, P2D);
+  imageMode(CORNER);
   position = new PVector(width/2, height/2);
   pickTarget();
   
@@ -69,8 +74,7 @@ bushes.resize (800,600);
    ghost04.resize(ghost02.width, ghost02.height);
 
 
- song = new SoundFile(this, "ghostduet.wav");
-song.loop();
+ 
 
   
   ellipseMode(CENTER);
@@ -118,18 +122,20 @@ image(front,fx,0); image(front,fx2,0);
 image(bushes,nx,0); image(bushes,nx2,0);
 image(faxman, target.x, target.y, 100, 100); 
 image(ghostCurrent, position.x , position.y, ghostCurrent.width + size, ghostCurrent.width + size);
+imageMode(CORNER);
+
 
 
 // Text
 textSize(30);
 fill(149, 0, 0);
-text("Souls: " + souls, 50, 550);
+text("hearts: " + souls, 50, 550);
    
  
  
    
    
-   if (souls < 29) {
+   if (souls < 15) {
 } else {
  fill(255, 255, 255);
   textSize(50);
